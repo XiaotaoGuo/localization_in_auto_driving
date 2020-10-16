@@ -1,0 +1,32 @@
+# 基础镜像
+FROM ubuntu:bionic
+
+# 将操作设为飞交互式
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 安装常用软件
+RUN apt-get update -q && \
+    apt-get upgrade -yq && \
+    apt-get install -yq wget curl git build-essential vim sudo lsb-release locales bash-completion
+
+# 安装 ROS 桌面版（如果在国内环境可能需要换 ROS 源提高速度）
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources.list.d/ros-latest.list'
+RUN curl -k https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | sudo apt-key add -
+RUN apt-get update -q && \
+    apt-get install -y ros-melodic-desktop-full python-rosdep
+RUN apt-get install -y ros-melodic-perception-pcl
+RUN apt-get install -y libgoogle-glog-dev
+RUN rosdep init
+RUN rosdep update
+
+# source ros setup 脚本
+RUN echo "source /opt/ros/melodic/setup.bash" >> /root/.bashrc
+RUN /bin/bash -c "source /root/.bashrc"
+
+# 设置语言
+RUN apt-get update
+RUN apt-get install -y locales locales-all
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
+
+# 设置工作目录
+WORKDIR /root
