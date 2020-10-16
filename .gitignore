@@ -38,3 +38,9 @@ lidar_localization/slam_data
 
 # vscode setting files
 **.vscode**
+
+## ros build folder
+**build**
+**devel**
+**install**
+**.catkin_workspace**
