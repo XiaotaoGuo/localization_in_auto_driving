@@ -35,3 +35,6 @@ lidar_localization/slam_data
 *.exe
 *.out
 *.app
+
+# vscode setting files
+**.vscode**
