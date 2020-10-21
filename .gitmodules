@@ -1,0 +1,3 @@
+[submodule "sensors_ws/submodules/clang-format"]
+	path = sensors_ws/submodules/clang-format
+	url = https://github.com/XiaotaoGuo/clang-format-settings.git
