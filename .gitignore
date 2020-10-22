@@ -2,8 +2,6 @@ lidar_localization/slam_data
 
 *.INFO
 *.INFO.*
-*.log.*
-*.WARNING
 
 # Prerequisites
 *.d
@@ -38,4 +36,11 @@ lidar_localization/slam_data
 *.out
 *.app
 
-**/third_parth/g2o/**
+# vscode setting files
+**.vscode**
+
+## ros build folder
+**build**
+**devel**
+**install**
+**.catkin_workspace**
