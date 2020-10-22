@@ -44,4 +44,4 @@ lidar_localization/slam_data
 **devel**
 **install**
 **.catkin_workspace**
-**third_party/g2o/**
+lidar_localization/third_party/g2o/**
