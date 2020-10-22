@@ -19,6 +19,13 @@ RUN apt-get install -y libgoogle-glog-dev
 RUN rosdep init
 RUN rosdep update
 
+# G2O 相关
+RUN apt-get install libqglviewer-dev
+RUN apt-get install qtdeclarative5-dev
+RUN apt-get install qt5-qmake
+RUN apt-get install libsuitesparse-dev
+RUN apt-get install libatlas-base-dev
+
 # source ros setup 脚本
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
 RUN /bin/bash -c "source /root/.bashrc"
