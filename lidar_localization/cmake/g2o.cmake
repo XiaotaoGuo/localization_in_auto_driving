@@ -1,3 +1,7 @@
+MESSAGE("Hello world")
+
+SET(G2O_ROOT /workspaces/localization_in_auto_driving/sensors_ws/src/lidar_localization/third_party/g2o)
+
 # Find the header files
 FIND_PATH(G2O_INCLUDE_DIR g2o/core/base_vertex.h
   ${G2O_ROOT}/include
@@ -11,6 +15,9 @@ FIND_PATH(G2O_INCLUDE_DIR g2o/core/base_vertex.h
   # /opt/ros/$ENV{ROS_DISTRO}/include
   NO_DEFAULT_PATH
   )
+
+MESSAGE(${G2O_INCLUDE_DIR})
+MESSAGE(${G2O_ROOT}/include)
 
 # Macro to unify finding both the debug and release versions of the
 # libraries; this is adapted from the OpenSceneGraph FIND_LIBRARY
