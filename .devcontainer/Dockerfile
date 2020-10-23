@@ -20,11 +20,11 @@ RUN rosdep init
 RUN rosdep update
 
 # G2O 相关
-RUN apt-get install libqglviewer-dev
-RUN apt-get install qtdeclarative5-dev
-RUN apt-get install qt5-qmake
-RUN apt-get install libsuitesparse-dev
-RUN apt-get install libatlas-base-dev
+RUN apt-get install -y libqglviewer-dev
+RUN apt-get install -y qtdeclarative5-dev
+RUN apt-get install -y qt5-qmake
+RUN apt-get install -y libsuitesparse-dev
+RUN apt-get install -y libatlas-base-dev
 
 # source ros setup 脚本
 RUN echo "source /opt/ros/kinetic/setup.bash" >> /root/.bashrc
